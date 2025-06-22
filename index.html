@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>80 Modern Button Hover Effects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      max-width: 1400px;
+      padding: 40px 0;
+    }
+    .btn {
+      min-width: 140px; 
+      min-height: 48px;
+      padding: 0 28px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: #fff;
+      color: #232526;
+      box-shadow: 0 2px 12px rgba(79, 140, 255, 0.07);
+      transition: all 0.25s cubic-bezier(.4,2,.6,1);
+      position: relative;
+      overflow: hidden;
+      outline: none;
+    }
+    /* 1. Slide Top */
+    .btn1:hover {
+      background: #4f8cff;
+      color: #fff;
+      transform: translateY(-4px) scale(1.05);
+    }
+    /* 2. Slide Bottom */
+    .btn2::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: -100%;
+      height: 100%;
+      background: #6ee7b7;
+      z-index: 0;
+      transition: bottom 0.3s;
+    }
+    .btn2:hover::after {
+      bottom: 0;
+    }
+    .btn2:hover {
+      color: #232526;
+    }
+    .btn2 span {
+      position: relative;
+      z-index: 1;
+    }
+    /* 3. Border Grow */
+    .btn3 {
+      border: 2px solid #ff4f81;
+      background: transparent;
+      color: #ff4f81;
+    }
+    .btn3:hover {
+      background: #ff4f81;
+      color: #fff;
+      box-shadow: 0 4px 24px #ff4f8155;
+    }
+    /* 4. Shadow Pop */
+    .btn4:hover {
+      box-shadow: 0 8px 32px #4f8cff77, 0 0 0 4px #fff2;
+      background: #fff;
+      color: #4f8cff;
+    }
+    /* 5. Fill Left */
+    .btn5 {
+      background: linear-gradient(90deg, #fff 50%, #764ba2 50%);
+      background-size: 200% 100%;
+      background-position: right bottom;
+      color: #764ba2;
+      transition: background-position 0.3s, color 0.3s;
+    }
+    .btn5:hover {
+      background-position: left bottom;
+      color: #fff;
+    }
+    /* 6. Fill Right */
+    .btn6 {
+      background: linear-gradient(90deg, #4f8cff 50%, #fff 50%);
+      background-size: 200% 100%;
+      background-position: left bottom;
+      color: #fff;
+      transition: background-position 0.3s, color 0.3s;
+    }
+    .btn6:hover {
+      background-position: right bottom;
+      color: #4f8cff;
+    }
+    /* 7. Underline Slide */
+    .btn7 {
+      background: transparent;
+      color: #fff;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s;
+    }
+    .btn7:hover {
+      border-color: #6ee7b7;
+      color: #6ee7b7;
+    }
+    /* 8. Outline Inset */
+    .btn8 {
+      background: #fff;
+      color: #764ba2;
+      border: 2px solid #764ba2;
+      box-shadow: inset 0 0 0 0 #764ba2;
+      transition: box-shadow 0.3s, color 0.3s;
+    }
+    .btn8:hover {
+      box-shadow: inset 0 0 0 100px #764ba2;
+      color: #fff;
+    }
+    /* 9. Ripple */
+    .btn9:active::after {
+      content: "";
+      position: absolute;
+      left: 50%; top: 50%;
+      width: 0; height: 0;
+      background: rgba(79,140,255,0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      animation: ripple 0.5s linear;
+      z-index: 2;
+    }
+    @keyframes ripple {
+      to { width: 200px; height: 200px; opacity: 0; }
+    }
+    /* 10. Neon Glow */
+    .btn10 {
+      background: #232526;
+      color: #6ee7b7;
+      box-shadow: 0 0 0 #6ee7b7;
+      transition: box-shadow 0.3s;
+    }
+    .btn10:hover {
+      box-shadow: 0 0 16px #6ee7b7, 0 0 32px #4f8cff;
+      color: #fff;
+    }
+    /* 11. Rotate */
+    .btn11:hover {
+      transform: rotate(-3deg) scale(1.08);
+      background: #ff4f81;
+      color: #fff;
+    }
+    /* 12. Skew */
+    .btn12 {
+      transform: skew(-10deg);
+    }
+    .btn12:hover {
+      background: #6ee7b7;
+      color: #232526;
+      transform: skew(0deg) scale(1.05);
+    }
+    /* 13. Slide Icon Right */
+    .btn13 {
+      padding-right: 40px;
+      position: relative;
+    }
+    .btn13::after {
+      content: "→";
+      position: absolute;
+      right: 18px; top: 50%;
+      transform: translateY(-50%) scale(0);
+      transition: transform 0.3s;
+      color: #4f8cff;
+      font-size: 1.2em;
+    }
+    .btn13:hover::after {
+      transform: translateY(-50%) scale(1);
+    }
+    /* 14. Slide Icon Left */
+    .btn14 {
+      padding-left: 40px;
+      position: relative;
+    }
+    .btn14::before {
+      content: "←";
+      position: absolute;
+      left: 18px; top: 50%;
+      transform: translateY(-50%) scale(0);
+      transition: transform 0.3s;
+      color: #ff4f81;
+      font-size: 1.2em;
+    }
+    .btn14:hover::before {
+      transform: translateY(-50%) scale(1);
+    }
+    /* 15. Gradient Border */
+    .btn15 {
+      border: 3px solid;
+      border-image: linear-gradient(90deg, #4f8cff, #6ee7b7) 1;
+      background: #fff;
+      color: #4f8cff;
+      transition: background 0.3s, color 0.3s;
+    }
+    .btn15:hover {
+      background: linear-gradient(90deg, #4f8cff, #6ee7b7);
+      color: #fff;
+    }
+    /* 16. Shadow Inset */
+    .btn16 {
+      box-shadow: inset 0 0 0 #4f8cff;
+      transition: box-shadow 0.3s;
+    }
+    .btn16:hover {
+      box-shadow: inset 0 0 24px #4f8cff;
+      background: #fff;
+      color: #4f8cff;
+    }
+    /* 17. Slide Up Text */
+    .btn17 {
+      overflow: hidden;
+      position: relative;
+      color: #fff;
+      background: #764ba2;
+    }
+    .btn17 span {
+      display: block;
+      transition: transform 0.3s;
+    }
+    .btn17:hover span {
+      transform: translateY(-120%);
+    }
+    .btn17::after {
+      content: "Hovered!";
+      position: absolute;
+      left: 0; right: 0; top: 50%;
+      transform: translateY(120%);
+      color: #6ee7b7;
+      font-weight: 700;
+      transition: transform 0.3s;
+      text-align: center;
+    }
+    .btn17:hover::after {
+      transform: translateY(-50%);
+    }
+    /* 18. Pulse */
+    .btn18:hover {
+      animation: pulse 0.5s;
+      background: #6ee7b7;
+      color: #232526;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1);}
+      50% { transform: scale(1.08);}
+      100% { transform: scale(1);}
+    }
+    /* 19. 3D Press */
+    .btn19 {
+      box-shadow: 0 6px 0 #4f8cff;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .btn19:active {
+      box-shadow: 0 2px 0 #4f8cff;
+      transform: translateY(4px);
+    }
+    /* 20. Rainbow */
+    .btn20 {
+      background: linear-gradient(90deg, #ff4f81, #6ee7b7, #4f8cff, #ff4f81);
+      background-size: 300% 100%;
+      color: #fff;
+      transition: background-position 0.5s;
+    }
+    .btn20:hover {
+      background-position: right center;
+      color: #232526;
+    }
+    /* 21. Flip */
+    .btn21 {
+      perspective: 400px;
+      background: #fff;
+      color: #764ba2;
+    }
+    .btn21 span {
+      display: block;
+      transition: transform 0.4s;
+      transform-origin: center;
+    }
+    .btn21:hover span {
+      transform: rotateX(180deg);
+      color: #fff;
+      background: #764ba2;
+    }
+    /* 22. Shine */
+    .btn22::before {
+      content: "";
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: linear-gradient(120deg, transparent 60%, #fff8 100%);
+      transform: rotate(25deg);
+      transition: all 0.5s;
+      pointer-events: none;
+    }
+    .btn22:hover::before {
+      left: 100%;
+      transition: all 0.5s;
+    }
+    /* 23. Bounce */
+    .btn23:hover {
+      animation: bounce 0.4s;
+      background: #6ee7b7;
+      color: #232526;
+    }
+    @keyframes bounce {
+      0% { transform: scale(1);}
+      30% { transform: scale(1.15);}
+      50% { transform: scale(0.95);}
+      70% { transform: scale(1.05);}
+      100% { transform: scale(1);}
+    }
+    /* 24. Split Color */
+    .btn24 {
+      background: linear-gradient(90deg, #4f8cff 50%, #ff4f81 50%);
+      background-size: 200% 100%;
+      background-position: left bottom;
+      color: #fff;
+      transition: background-position 0.4s;
+    }
+    .btn24:hover {
+      background-position: right bottom;
+      color: #fff;
+    }
+    /* 25. Slide Up Border */
+    .btn25 {
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .btn25:hover {
+      border-color: #ff4f81;
+      color: #ff4f81;
+    }
+    /* 26. Double Shadow */
+    .btn26:hover {
+      box-shadow: 0 4px 24px #4f8cff55, 0 0 0 6px #ff4f8122;
+      background: #fff;
+      color: #4f8cff;
+    }
+    /* 27. Slide Gradient */
+    .btn27 {
+      background: linear-gradient(90deg, #6ee7b7, #ff4f81, #4f8cff);
+      background-size: 200% 100%;
+      transition: background-position 0.5s;
+    }
+    .btn27:hover {
+      background-position: right center;
+      color: #fff;
+    }
+    /* 28. Glassmorphism */
+    .btn28 {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      border: 1.5px solid #fff4;
+      box-shadow: 0 4px 24px #fff2;
+    }
+    .btn28:hover {
+      background: rgba(110,231,183,0.25);
+      color: #232526;
+      border-color: #6ee7b7;
+    }
+    /* 29. Slide Down Text */
+    .btn29 {
+      overflow: hidden;
+      position: relative;
+      color: #fff;
+      background: #4f8cff;
+    }
+    .btn29 span {
+      display: block;
+      transition: transform 0.3s;
+    }
+    .btn29:hover span {
+      transform: translateY(120%);
+    }
+    .btn29::after {
+      content: "Surprise!";
+      position: absolute;
+      left: 0; right: 0; top: 50%;
+      transform: translateY(-120%);
+      color: #ff4f81;
+      font-weight: 700;
+      transition: transform 0.3s;
+      text-align: center;
+    }
+    .btn29:hover::after {
+      transform: translateY(-50%);
+    }
+    /* 30. Border Slide In */
+    .btn30 {
+      border: 2px solid transparent;
+      background: #fff;
+      color: #764ba2;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .btn30:hover {
+      border-color: #6ee7b7;
+      color: #6ee7b7;
+    }
+    /* 31. Diagonal Fill */
+    .btn31 {
+      background: linear-gradient(135deg, #fff 60%, #4f8cff 60%);
+      background-size: 200% 200%;
+      background-position: right bottom;
+      color: #4f8cff;
+      transition: background-position 0.4s, color 0.4s;
+    }
+    .btn31:hover {
+      background-position: left top;
+      color: #fff;
+    }
+    /* 32. Icon Pop */
+    .btn32 {
+      padding-right: 40px;
+      position: relative;
+    }
+    .btn32::after {
+      content: "★";
+      position: absolute;
+      right: 18px; top: 50%;
+      transform: translateY(-50%) scale(0);
+      transition: transform 0.3s;
+      color: #ff4f81;
+      font-size: 1.2em;
+    }
+    .btn32:hover::after {
+      transform: translateY(-50%) scale(1.2);
+    }
+    /* 33. Slide Border */
+    .btn33 {
+      border: 2px solid #fff;
+      background: #4f8cff;
+      color: #fff;
+      box-shadow: none;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .btn33:hover {
+      border-color: #ff4f81;
+      background: #fff;
+      color: #ff4f81;
+    }
+    /* 34. Zoom Out */
+    .btn34:hover {
+      transform: scale(0.92);
+      background: #ff4f81;
+      color: #fff;
+    }
+    /* 35. Slide Up Icon */
+    .btn35 {
+      padding-right: 40px;
+      position: relative;
+    }
+    .btn35::after {
+      content: "↑";
+      position: absolute;
+      right: 18px; top: 60%;
+      transform: translateY(0) scale(0);
+      transition: transform 0.3s;
+      color: #6ee7b7;
+      font-size: 1.2em;
+    }
+    .btn35:hover::after {
+      transform: translateY(-120%) scale(1.2);
+    }
+    /* 36. Slide Down Icon */
+    .btn36 {
+      padding-right: 40px;
+      position: relative;
+    }
+    .btn36::after {
+      content: "↓";
+      position: absolute;
+      right: 18px; top: 40%;
+      transform: translateY(0) scale(0);
+      transition: transform 0.3s;
+      color: #764ba2;
+      font-size: 1.2em;
+    }
+    .btn36:hover::after {
+      transform: translateY(120%) scale(1.2);
+    }
+    /* 37. Transparent Fade */
+    .btn37 {
+      background: #fff;
+      color: #232526;
+      transition: background 0.3s, color 0.3s;
+    }
+    .btn37:hover {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+    }
+    /* 38. Slide In Left */
+    .btn38 {
+      background: #ff4f81;
+      color: #fff;
+      transform: translateX(-10px);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .btn38:hover {
+      transform: translateX(0);
+      background: #6ee7b7;
+      color: #232526;
+    }
+    /* 39. Slide In Right */
+    .btn39 {
+      background: #6ee7b7;
+      color: #232526;
+      transform: translateX(10px);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .btn39:hover {
+      transform: translateX(0);
+      background: #ff4f81;
+      color: #fff;
+    }
+    /* 40. Glow Border */
+    .btn40 {
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 #fff;
+      transition: box-shadow 0.3s, border-color 0.3s;
+    }
+    .btn40:hover {
+      box-shadow: 0 0 16px #fff, 0 0 32px #6ee7b7;
+      border-color: #6ee7b7;
+      background: #232526;
+      color: #fff;
+    }
+    /* 41. Wave */
+    .btn41:hover {
+      animation: wave 0.5s;
+      background: linear-gradient(90deg, #4f8cff, #ff4f81);
+      color: #fff;
+    }
+    @keyframes wave {
+      0% { transform: rotate(-2deg) scale(1);}
+      25% { transform: rotate(2deg) scale(1.08);}
+      50% { transform: rotate(-2deg) scale(1.04);}
+      75% { transform: rotate(2deg) scale(1.08);}
+      100% { transform: rotate(0) scale(1);}
+    }
+    /* 42. Shadow Sweep */
+    .btn42:hover {
+      box-shadow: 0 0 32px #6ee7b7, 0 0 0 8px #fff2;
+      background: #fff;
+      color: #6ee7b7;
+    }
+    /* 43. Pop Color */
+    .btn43:hover {
+      background: #ff4f81;
+      color: #fff;
+      transform: scale(1.12);
+    }
+    /* 44. Border Fade */
+    .btn44 {
+      border: 2px solid #fff;
+      transition: border-color 0.3s;
+    }
+    .btn44:hover {
+      border-color: #ff4f81;
+      color: #ff4f81;
+    }
+    /* 45. Slide Circle */
+    .btn45::before {
+      content: "";
+      position: absolute;
+      left: 50%; top: 50%;
+      width: 0; height: 0;
+      background: #6ee7b7;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s, height 0.3s;
+      z-index: 0;
+    }
+    .btn45:hover::before {
+      width: 200px; height: 200px;
+    }
+    .btn45:hover {
+      color: #fff;
+    }
+    .btn45 span, .btn45 {
+      position: relative;
+      z-index: 1;
+    }
+    /* 46. Text Shadow */
+    .btn46:hover {
+      text-shadow: 0 4px 16px #4f8cff, 0 2px 8px #ff4f81;
+      color: #fff;
+    }
+    /* 47. Gradient Text */
+    .btn47 {
+      background: #fff;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      background-image: linear-gradient(90deg, #4f8cff, #ff4f81);
+      transition: background 0.3s;
+    }
+    .btn47:hover {
+      background-image: linear-gradient(90deg, #ff4f81, #6ee7b7);
+    }
+    /* 48. Zoom In */
+    .btn48:hover {
+      transform: scale(1.15);
+      background: #6ee7b7;
+      color: #232526;
+    }
+    /* 49. Slide Out */
+    .btn49:hover {
+      transform: translateY(-12px) scale(1.08);
+      background: #232526;
+      color: #fff;
+    }
+    /* 50. Border Pulse */
+    .btn50:hover {
+      animation: borderPulse 0.6s;
+      border: 2px solid #ff4f81;
+      color: #ff4f81;
+    }
+    @keyframes borderPulse {
+      0% { box-shadow: 0 0 0 0 #ff4f8144;}
+      70% { box-shadow: 0 0 0 8px #ff4f8100;}
+      100% { box-shadow: 0 0 0 0 #ff4f8100;}
+    }
+    /* 51. Shimmer */
+    .btn51 {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn51::after {
+      content: "";
+      position: absolute;
+      top: 0; left: -75%;
+      width: 50%; height: 100%;
+      background: linear-gradient(120deg, transparent, #fff8, transparent);
+      transform: skewX(-20deg);
+      transition: left 0.5s;
+    }
+    .btn51:hover::after {
+      left: 120%;
+    }
+    /* 52. Corner Glow */
+    .btn52:hover {
+      box-shadow: 0 0 24px #6ee7b7, 0 0 0 8px #fff2, 0 0 0 2px #ff4f81 inset;
+      background: #fff;
+      color: #6ee7b7;
+    }
+    /* 53. Fill Up */
+    .btn53::before {
+      content: "";
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 100%; height: 0;
+      background: #4f8cff;
+      z-index: 0;
+      transition: height 0.3s;
+    }
+    .btn53:hover::before {
+      height: 100%;
+    }
+    .btn53, .btn53 span { position: relative; z-index: 1; }
+    .btn53:hover { color: #fff; }
+    /* 54. Fill Down */
+    .btn54::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%; height: 0;
+      background: #ff4f81;
+      z-index: 0;
+      transition: height 0.3s;
+    }
+    .btn54:hover::before {
+      height: 100%;
+    }
+    .btn54, .btn54 span { position: relative; z-index: 1; }
+    .btn54:hover { color: #fff; }
+    /* 55. Slide Diagonal */
+    .btn55 {
+      background: linear-gradient(135deg, #fff 60%, #ff4f81 60%);
+      background-size: 200% 200%;
+      background-position: right bottom;
+      color: #ff4f81;
+      transition: background-position 0.4s, color 0.4s;
+    }
+    .btn55:hover {
+      background-position: left top;
+      color: #fff;
+    }
+    /* 56. Icon Fade */
+    .btn56 {
+      padding-right: 40px;
+      position: relative;
+    }
+    .btn56::after {
+      content: "★";
+      position: absolute;
+      right: 18px; top: 50%;
+      opacity: 0;
+      transition: opacity 0.3s;
+      color: #ff4f81;
+      font-size: 1.2em;
+    }
+    .btn56:hover::after {
+      opacity: 1;
+    }
+    /* 57. Text Swap */
+    .btn57 {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn57 span {
+      display: block;
+      transition: transform 0.3s;
+    }
+    .btn57:hover span {
+      transform: translateY(-120%);
+    }
+    .btn57::after {
+      content: "Swapped!";
+      position: absolute;
+      left: 0; right: 0; top: 50%;
+      transform: translateY(120%);
+      color: #6ee7b7;
+      font-weight: 700;
+      transition: transform 0.3s;
+      text-align: center;
+    }
+    .btn57:hover::after {
+      transform: translateY(-50%);
+    }
+    /* 58. Border Dash */
+    .btn58 {
+      border: 2px dashed #4f8cff;
+      background: #fff;
+      color: #4f8cff;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .btn58:hover {
+      border-color: #ff4f81;
+      color: #ff4f81;
+    }
+    /* 59. Shadow In */
+    .btn59:hover {
+      box-shadow: inset 0 0 24px #ff4f81;
+      background: #fff;
+      color: #ff4f81;
+    }
+    /* 60. Shadow Out */
+    .btn60:hover {
+      box-shadow: 0 0 24px #6ee7b7;
+      background: #fff;
+      color: #6ee7b7;
+    }
+    /* 61. Border Flip */
+    .btn61 {
+      border: 2px solid #4f8cff;
+      background: #fff;
+      color: #4f8cff;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .btn61:hover {
+      border-color: #ff4f81;
+      color: #ff4f81;
+      background: #fff;
+    }
+    /* 62. Slide Overlay */
+    .btn62::before {
+      content: "";
+      position: absolute;
+      left: -100%; top: 0;
+      width: 100%; height: 100%;
+      background: #6ee7b7;
+      z-index: 0;
+      transition: left 0.3s;
+    }
+    .btn62:hover::before {
+      left: 0;
+    }
+    .btn62, .btn62 span { position: relative; z-index: 1; }
+    .btn62:hover { color: #fff; }
+    /* 63. Glow Text */
+    .btn63:hover {
+      text-shadow: 0 0 8px #6ee7b7, 0 0 16px #4f8cff;
+      color: #fff;
+    }
+    /* 64. Fill Center */
+    .btn64::before {
+      content: "";
+      position: absolute;
+      left: 50%; top: 50%;
+      width: 0; height: 0;
+      background: #ff4f81;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s, height 0.3s;
+      z-index: 0;
+    }
+    .btn64:hover::before {
+      width: 200px; height: 200px;
+    }
+    .btn64, .btn64 span { position: relative; z-index: 1; }
+    .btn64:hover { color: #fff; }
+    /* 65. Slide Split */
+    .btn65 {
+      background: linear-gradient(90deg, #4f8cff 50%, #fff 50%);
+      background-size: 200% 100%;
+      background-position: left bottom;
+      color: #fff;
+      transition: background-position 0.4s, color 0.4s;
+    }
+    .btn65:hover {
+      background-position: right bottom;
+      color: #4f8cff;
+    }
+    /* 66. Wave Border */
+    .btn66 {
+      border: 2px solid #6ee7b7;
+      background: #fff;
+      color: #6ee7b7;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .btn66:hover {
+      border-color: #ff4f81;
+      color: #ff4f81;
+    }
+    /* 67. Icon Slide */
+    .btn67 {
+      padding-right: 40px;
+      position: relative;
+    }
+    .btn67::after {
+      content: "⮞";
+      position: absolute;
+      right: 18px; top: 50%;
+      transform: translateY(-50%) translateX(20px);
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.3s;
+      color: #4f8cff;
+      font-size: 1.2em;
+    }
+    .btn67:hover::after {
+      transform: translateY(-50%) translateX(0);
+      opacity: 1;
+    }
+    /* 68. Text Reveal */
+    .btn68 span {
+      display: block;
+      transition: opacity 0.3s;
+    }
+    .btn68:hover span {
+      opacity: 0;
+    }
+    .btn68::after {
+      content: "Revealed!";
+      position: absolute;
+      left: 0; right: 0; top: 50%;
+      transform: translateY(-50%);
+      color: #6ee7b7;
+      font-weight: 700;
+      opacity: 0;
+      transition: opacity 0.3s;
+      text-align: center;
+    }
+    .btn68:hover::after {
+      opacity: 1;
+    }
+    /* 69. Shadow Color */
+    .btn69:hover {
+      box-shadow: 0 0 24px #ff4f81;
+      background: #fff;
+      color: #ff4f81;
+    }
+    /* 70. Border Expand */
+    .btn70 {
+      border: 2px solid #fff;
+      transition: border-width 0.3s;
+    }
+    .btn70:hover {
+      border-width: 6px;
+      color: #4f8cff;
+    }
+    /* 71. Slide Up Overlay */
+    .btn71::before {
+      content: "";
+      position: absolute;
+      left: 0; bottom: -100%;
+      width: 100%; height: 100%;
+      background: #4f8cff;
+      z-index: 0;
+      transition: bottom 0.3s;
+    }
+    .btn71:hover::before {
+      bottom: 0;
+    }
+    .btn71, .btn71 span { position: relative; z-index: 1; }
+    .btn71:hover { color: #fff; }
+    /* 72. Slide Down Overlay */
+    .btn72::before {
+      content: "";
+      position: absolute;
+      left: 0; top: -100%;
+      width: 100%; height: 100%;
+      background: #ff4f81;
+      z-index: 0;
+      transition: top 0.3s;
+    }
+    .btn72:hover::before {
+      top: 0;
+    }
+    .btn72, .btn72 span { position: relative; z-index: 1; }
+    .btn72:hover { color: #fff; }
+    /* 73. Fill Fade */
+    .btn73:hover {
+      background: #6ee7b7;
+      color: #fff;
+      opacity: 0.7;
+    }
+    /* 74. Border Glow */
+    .btn74:hover {
+      box-shadow: 0 0 16px #ff4f81, 0 0 32px #6ee7b7;
+      border-color: #ff4f81;
+      background: #fff;
+      color: #ff4f81;
+    }
+    /* 75. Icon Rotate */
+    .btn75 {
+      padding-right: 40px;
+      position: relative;
+    }
+    .btn75::after {
+      content: "⟳";
+      position: absolute;
+      right: 18px; top: 50%;
+      transform: translateY(-50%) rotate(0deg);
+      transition: transform 0.3s;
+      color: #6ee7b7;
+      font-size: 1.2em;
+    }
+    .btn75:hover::after {
+      transform: translateY(-50%) rotate(360deg);
+    }
+    /* 76. Text Blur */
+    .btn76:hover {
+      color: #fff;
+      filter: blur(1px);
+      background: #4f8cff;
+    }
+    /* 77. Shadow Glow */
+    .btn77:hover {
+      box-shadow: 0 0 32px #6ee7b7, 0 0 64px #ff4f81;
+      background: #fff;
+      color: #6ee7b7;
+    }
+    /* 78. Border Slide Out */
+    .btn78 {
+      border: 2px solid #ff4f81;
+      transition: border-color 0.3s;
+    }
+    .btn78:hover {
+      border-color: #fff;
+      color: #fff;
+      background: #ff4f81;
+    }
+    /* 79. Slide Color */
+    .btn79 {
+      background: linear-gradient(90deg, #fff 50%, #6ee7b7 50%);
+      background-size: 200% 100%;
+      background-position: left bottom;
+      color: #6ee7b7;
+      transition: background-position 0.3s, color 0.3s;
+    }
+    .btn79:hover {
+      background-position: right bottom;
+      color: #fff;
+    }
+    /* 80. Pulse Border */
+    .btn80:hover {
+      animation: borderPulse2 0.6s;
+      border: 2px solid #6ee7b7;
+      color: #6ee7b7;
+    }
+    @keyframes borderPulse2 {
+      0% { box-shadow: 0 0 0 0 #6ee7b744;}
+      70% { box-shadow: 0 0 0 8px #6ee7b700;}
+      100% { box-shadow: 0 0 0 0 #6ee7b700;}
+    }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .container { gap: 16px; }
+      .btn { min-width: 120px; font-size: 1rem; }
+    }
+    @media (max-width: 600px) {
+      .container { gap: 10px; }
+      .btn { min-width: 100px; font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="btn btn1">Slide Top</button>
+    <button class="btn btn2"><span>Slide Bottom</span></button>
+    <button class="btn btn3">Border Grow</button>
+    <button class="btn btn4">Shadow Pop</button>
+    <button class="btn btn5">Fill Left</button>
+    <button class="btn btn6">Fill Right</button>
+    <button class="btn btn7">Underline Slide</button>
+    <button class="btn btn8">Outline Inset</button>
+    <button class="btn btn9">Ripple</button>
+    <button class="btn btn10">Neon Glow</button>
+    <button class="btn btn11">Rotate</button>
+    <button class="btn btn12">Skew</button>
+    <button class="btn btn13">Slide Icon →</button>
+    <button class="btn btn14">← Slide Icon</button>
+    <button class="btn btn15">Gradient Border</button>
+    <button class="btn btn16">Shadow Inset</button>
+    <button class="btn btn17"><span>Slide Up Text</span></button>
+    <button class="btn btn18">Pulse</button>
+    <button class="btn btn19">3D Press</button>
+    <button class="btn btn20">Rainbow</button>
+    <button class="btn btn21"><span>Flip</span></button>
+    <button class="btn btn22">Shine</button>
+    <button class="btn btn23">Bounce</button>
+    <button class="btn btn24">Split Color</button>
+    <button class="btn btn25">Slide Up Border</button>
+    <button class="btn btn26">Double Shadow</button>
+    <button class="btn btn27">Slide Gradient</button>
+    <button class="btn btn28">Glassmorphism</button>
+    <button class="btn btn29"><span>Slide Down Text</span></button>
+    <button class="btn btn30">Border Slide In</button>
+    <button class="btn btn31">Diagonal Fill</button>
+    <button class="btn btn32">Icon Pop</button>
+    <button class="btn btn33">Slide Border</button>
+    <button class="btn btn34">Zoom Out</button>
+    <button class="btn btn35">Slide Up Icon</button>
+    <button class="btn btn36">Slide Down Icon</button>
+    <button class="btn btn37">Transparent Fade</button>
+    <button class="btn btn38">Slide In Left</button>
+    <button class="btn btn39">Slide In Right</button>
+    <button class="btn btn40">Glow Border</button>
+    <!-- 41-80: More modern hover effects -->
+    <button class="btn btn41">Wave</button>
+    <button class="btn btn42">Shadow Sweep</button>
+    <button class="btn btn43">Pop Color</button>
+    <button class="btn btn44">Border Fade</button>
+    <button class="btn btn45">Slide Circle</button>
+    <button class="btn btn46">Text Shadow</button>
+    <button class="btn btn47">Gradient Text</button>
+    <button class="btn btn48">Zoom In</button>
+    <button class="btn btn49">Slide Out</button>
+    <button class="btn btn50">Border Pulse</button>
+    <button class="btn btn51">Shimmer</button>
+    <button class="btn btn52">Corner Glow</button>
+    <button class="btn btn53">Fill Up</button>
+    <button class="btn btn54">Fill Down</button>
+    <button class="btn btn55">Slide Diagonal</button>
+    <button class="btn btn56">Icon Fade</button>
+    <button class="btn btn57">Text Swap</button>
+    <button class="btn btn58">Border Dash</button>
+    <button class="btn btn59">Shadow In</button>
+    <button class="btn btn60">Shadow Out</button>
+    <button class="btn btn61">Border Flip</button>
+    <button class="btn btn62">Slide Overlay</button>
+    <button class="btn btn63">Glow Text</button>
+    <button class="btn btn64">Fill Center</button>
+    <button class="btn btn65">Slide Split</button>
+    <button class="btn btn66">Wave Border</button>
+    <button class="btn btn67">Icon Slide</button>
+    <button class="btn btn68">Text Reveal</button>
+    <button class="btn btn69">Shadow Color</button>
+    <button class="btn btn70">Border Expand</button>
+    <button class="btn btn71">Slide Up Overlay</button>
+    <button class="btn btn72">Slide Down Overlay</button>
+    <button class="btn btn73">Fill Fade</button>
+    <button class="btn btn74">Border Glow</button>
+    <button class="btn btn75">Icon Rotate</button>
+    <button class="btn btn76">Text Blur</button>
+    <button class="btn btn77">Shadow Glow</button>
+    <button class="btn btn78">Border Slide Out</button>
+    <button class="btn btn79">Slide Color</button>
+    <button class="btn btn80">Pulse Border</button>
+  </div>
+  <style>
+    /* ...existing styles... */
+    /* 41. Wave */
+    .btn41:hover {
+      animation: wave 0.5s;
+      background: linear-gradient(90deg, #4f8cff, #ff4f81);
+      color: #fff;
+    }
+    @keyframes wave {
+      0% { transform: rotate(-2deg) scale(1);}
+      25% { transform: rotate(2deg) scale(1.08);}
+      50% { transform: rotate(-2deg) scale(1.04);}
+      75% { transform: rotate(2deg) scale(1.08);}
+      100% { transform: rotate(0) scale(1);}
+    }
+    /* 42. Shadow Sweep */
+    .btn42:hover {
+      box-shadow: 0 0 32px #6ee7b7, 0 0 0 8px #fff2;
+      background: #fff;
+      color: #6ee7b7;
+    }
+    /* 43. Pop Color */
+    .btn43:hover {
+      background: #ff4f81;
+      color: #fff;
+      transform: scale(1.12);
+    }
+    /* 44. Border Fade */
+    .btn44 {
+      border: 2px solid #fff;
+      transition: border-color 0.3s;
+    }
+    .btn44:hover {
+      border-color: #ff4f81;
+      color: #ff4f81;
+    }
+    /* 45. Slide Circle */
+    .btn45::before {
+      content: "";
+      position: absolute;
+      left: 50%; top: 50%;
+      width: 0; height: 0;
+      background: #6ee7b7;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s, height 0.3s;
+      z-index: 0;
+    }
+    .btn45:hover::before {
+      width: 200px; height: 200px;
+    }
+    .btn45:hover {
+      color: #fff;
+    }
+    .btn45 span, .btn45 {
+      position: relative;
+      z-index: 1;
+    }
+    /* 46. Text Shadow */
+    .btn46:hover {
+      text-shadow: 0 4px 16px #4f8cff, 0 2px 8px #ff4f81;
+      color: #fff;
+    }
+    /* 47. Gradient Text */
+    .btn47 {
+      background: #fff;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      background-image: linear-gradient(90deg, #4f8cff, #ff4f81);
+      transition: background 0.3s;
+    }
+    .btn47:hover {
+      background-image: linear-gradient(90deg, #ff4f81, #6ee7b7);
+    }
+    /* 48. Zoom In */
+    .btn48:hover {
+      transform: scale(1.15);
+      background: #6ee7b7;
+      color: #232526;
+    }
+    /* 49. Slide Out */
+    .btn49:hover {
+      transform: translateY(-12px) scale(1.08);
+      background: #232526;
+      color: #fff;
+    }
+    /* 50. Border Pulse */
+    .btn50:hover {
+      animation: borderPulse 0.6s;
+      border: 2px solid #ff4f81;
+      color: #ff4f81;
+    }
+    @keyframes borderPulse {
+      0% { box-shadow: 0 0 0 0 #ff4f8144;}
+      70% { box-shadow: 0 0 0 8px #ff4f8100;}
+      100% { box-shadow: 0 0 0 0 #ff4f8100;}
+    }
+    /* 51. Shimmer */
+    .btn51 {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn51::after {
+      content: "";
+      position: absolute;
+      top: 0; left: -75%;
+      width: 50%; height: 100%;
+      background: linear-gradient(120deg, transparent, #fff8, transparent);
+      transform: skewX(-20deg);
+      transition: left 0.5s;
+    }
+    .btn51:hover::after {
+      left: 120%;
+    }
+    /* 52. Corner Glow */
+    .btn52:hover {
+      box-shadow: 0 0 24px #6ee7b7, 0 0 0 8px #fff2, 0 0 0 2px #ff4f81 inset;
+      background: #fff;
+      color: #6ee7b7;
+    }
+    /* 53. Fill Up */
+    .btn53::before {
+      content: "";
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 100%; height: 0;
+      background: #4f8cff;
+      z-index: 0;
+      transition: height 0.3s;
+    }
+    .btn53:hover::before {
+      height: 100%;
+    }
+    .btn53, .btn53 span { position: relative; z-index: 1; }
+    .btn53:hover { color: #fff; }
+    /* 54. Fill Down */
+    .btn54::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%; height: 0;
+      background: #ff4f81;
+      z-index: 0;
+      transition: height 0.3s;
+    }
+    .btn54:hover::before {
+      height: 100%;
+    }
+    .btn54, .btn54 span { position: relative; z-index: 1; }
+    .btn54:hover { color: #fff; }
+    /* 55. Slide Diagonal */
+    .btn55 {
+      background: linear-gradient(135deg, #fff 60%, #ff4f81 60%);
+      background-size: 200% 200%;
+      background-position: right bottom;
+      color: #ff4f81;
+      transition: background-position 0.4s, color 0.4s;
+    }
+    .btn55:hover {
+      background-position: left top;
+      color: #fff;
+    }
+    /* 56. Icon Fade */
+    .btn56 {
+      padding-right: 40px;
+      position: relative;
+    }
+    .btn56::after {
+      content: "★";
+      position: absolute;
+      right: 18px; top: 50%;
+      opacity: 0;
+      transition: opacity 0.3s;
+      color: #ff4f81;
+      font-size: 1.2em;
+    }
+    .btn56:hover::after {
+      opacity: 1;
+    }
+    /* 57. Text Swap */
+    .btn57 {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn57 span {
+      display: block;
+      transition: transform 0.3s;
+    }
+    .btn57:hover span {
+      transform: translateY(-120%);
+    }
+    .btn57::after {
+      content: "Swapped!";
+      position: absolute;
+      left: 0; right: 0; top: 50%;
+      transform: translateY(120%);
+      color: #6ee7b7;
+      font-weight: 700;
+      transition: transform 0.3s;
+      text-align: center;
+    }
+    .btn57:hover::after {
+      transform: translateY(-50%);
+    }
+    /* 58. Border Dash */
+    .btn58 {
+      border: 2px dashed #4f8cff;
+      background: #fff;
+      color: #4f8cff;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .btn58:hover {
+      border-color: #ff4f81;
+      color: #ff4f81;
+    }
+    /* 59. Shadow In */
+    .btn59:hover {
+      box-shadow: inset 0 0 24px #ff4f81;
+      background: #fff;
+      color: #ff4f81;
+    }
+    /* 60. Shadow Out */
+    .btn60:hover {
+      box-shadow: 0 0 24px #6ee7b7;
+      background: #fff;
+      color: #6ee7b7;
+    }
+    /* 61. Border Flip */
+    .btn61 {
+      border: 2px solid #4f8cff;
+      background: #fff;
+      color: #4f8cff;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .btn61:hover {
+      border-color: #ff4f81;
+      color: #ff4f81;
+      background: #fff;
+    }
+    /* 62. Slide Overlay */
+    .btn62::before {
+      content: "";
+      position: absolute;
+      left: -100%; top: 0;
+      width: 100%; height: 100%;
+      background: #6ee7b7;
+      z-index: 0;
+      transition: left 0.3s;
+    }
+    .btn62:hover::before {
+      left: 0;
+    }
+    .btn62, .btn62 span { position: relative; z-index: 1; }
+    .btn62:hover { color: #fff; }
+    /* 63. Glow Text */
+    .btn63:hover {
+      text-shadow: 0 0 8px #6ee7b7, 0 0 16px #4f8cff;
+      color: #fff;
+    }
+    /* 64. Fill Center */
+    .btn64::before {
+      content: "";
+      position: absolute;
+      left: 50%; top: 50%;
+      width: 0; height: 0;
+      background: #ff4f81;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s, height 0.3s;
+      z-index: 0;
+    }
+    .btn64:hover::before {
+      width: 200px; height: 200px;
+    }
+    .btn64, .btn64 span { position: relative; z-index: 1; }
+    .btn64:hover { color: #fff; }
+    /* 65. Slide Split */
+    .btn65 {
+      background: linear-gradient(90deg, #4f8cff 50%, #fff 50%);
+      background-size: 200% 100%;
+      background-position: left bottom;
+      color: #fff;
+      transition: background-position 0.4s, color 0.4s;
+    }
+    .btn65:hover {
+      background-position: right bottom;
+      color: #4f8cff;
+    }
+    /* 66. Wave Border */
+    .btn66 {
+      border: 2px solid #6ee7b7;
+      background: #fff;
+      color: #6ee7b7;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .btn66:hover {
+      border-color: #ff4f81;
+      color: #ff4f81;
+    }
+    /* 67. Icon Slide */
+    .btn67 {
+      padding-right: 40px;
+      position: relative;
+    }
+    .btn67::after {
+      content: "⮞";
+      position: absolute;
+      right: 18px; top: 50%;
+      transform: translateY(-50%) translateX(20px);
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.3s;
+      color: #4f8cff;
+      font-size: 1.2em;
+    }
+    .btn67:hover::after {
+      transform: translateY(-50%) translateX(0);
+      opacity: 1;
+    }
+    /* 68. Text Reveal */
+    .btn68 span {
+      display: block;
+      transition: opacity 0.3s;
+    }
+    .btn68:hover span {
+      opacity: 0;
+    }
+    .btn68::after {
+      content: "Revealed!";
+      position: absolute;
+      left: 0; right: 0; top: 50%;
+      transform: translateY(-50%);
+      color: #6ee7b7;
+      font-weight: 700;
+      opacity: 0;
+      transition: opacity 0.3s;
+      text-align: center;
+    }
+    .btn68:hover::after {
+      opacity: 1;
+    }
+    /* 69. Shadow Color */
+    .btn69:hover {
+      box-shadow: 0 0 24px #ff4f81;
+      background: #fff;
+      color: #ff4f81;
+    }
+    /* 70. Border Expand */
+    .btn70 {
+      border: 2px solid #fff;
+      transition: border-width 0.3s;
+    }
+    .btn70:hover {
+      border-width: 6px;
+      color: #4f8cff;
+    }
+    /* 71. Slide Up Overlay */
+    .btn71::before {
+      content: "";
+      position: absolute;
+      left: 0; bottom: -100%;
+      width: 100%; height: 100%;
+      background: #4f8cff;
+      z-index: 0;
+      transition: bottom 0.3s;
+    }
+    .btn71:hover::before {
+      bottom: 0;
+    }
+    .btn71, .btn71 span { position: relative; z-index: 1; }
+    .btn71:hover { color: #fff; }
+    /* 72. Slide Down Overlay */
+    .btn72::before {
+      content: "";
+      position: absolute;
+      left: 0; top: -100%;
+      width: 100%; height: 100%;
+      background: #ff4f81;
+      z-index: 0;
+      transition: top 0.3s;
+    }
+    .btn72:hover::before {
+      top: 0;
+    }
+    .btn72, .btn72 span { position: relative; z-index: 1; }
+    .btn72:hover { color: #fff; }
+    /* 73. Fill Fade */
+    .btn73:hover {
+      background: #6ee7b7;
+      color: #fff;
+      opacity: 0.7;
+    }
+    /* 74. Border Glow */
+    .btn74:hover {
+      box-shadow: 0 0 16px #ff4f81, 0 0 32px #6ee7b7;
+      border-color: #ff4f81;
+      background: #fff;
+      color: #ff4f81;
+    }
+    /* 75. Icon Rotate */
+    .btn75 {
+      padding-right: 40px;
+      position: relative;
+    }
+    .btn75::after {
+      content: "⟳";
+      position: absolute;
+      right: 18px; top: 50%;
+      transform: translateY(-50%) rotate(0deg);
+      transition: transform 0.3s;
+      color: #6ee7b7;
+      font-size: 1.2em;
+    }
+    .btn75:hover::after {
+      transform: translateY(-50%) rotate(360deg);
+    }
+    /* 76. Text Blur */
+    .btn76:hover {
+      color: #fff;
+      filter: blur(1px);
+      background: #4f8cff;
+    }
+    /* 77. Shadow Glow */
+    .btn77:hover {
+      box-shadow: 0 0 32px #6ee7b7, 0 0 64px #ff4f81;
+      background: #fff;
+      color: #6ee7b7;
+    }
+    /* 78. Border Slide Out */
+    .btn78 {
+      border: 2px solid #ff4f81;
+      transition: border-color 0.3s;
+    }
+    .btn78:hover {
+      border-color: #fff;
+      color: #fff;
+      background: #ff4f81;
+    }
+    /* 79. Slide Color */
+    .btn79 {
+      background: linear-gradient(90deg, #fff 50%, #6ee7b7 50%);
+      background-size: 200% 100%;
+      background-position: left bottom;
+      color: #6ee7b7;
+      transition: background-position 0.3s, color 0.3s;
+    }
+    .btn79:hover {
+      background-position: right bottom;
+      color: #fff;
+    }
+    /* 80. Pulse Border */
+    .btn80:hover {
+      animation: borderPulse2 0.6s;
+      border: 2px solid #6ee7b7;
+      color: #6ee7b7;
+    }
+    @keyframes borderPulse2 {
+      0% { box-shadow: 0 0 0 0 #6ee7b744;}
+      70% { box-shadow: 0 0 0 8px #6ee7b700;}
+      100% { box-shadow: 0 0 0 0 #6ee7b700;}
+    }
+  </style>
+</body>
+</html>
